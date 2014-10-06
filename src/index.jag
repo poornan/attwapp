@@ -102,7 +102,12 @@ return dateStr;
 
 
 </script>
-      <div style="height:200px;width:200px;border:blue">
+      <div style="height:200px;width:200px;border-style: solid;
+    border-color:blue">
+          <form action="">
+              <input type="text" placeholder="input tags separated by coma"/>
+              <input type="submit"/>
+          </form>
 
       </div>
 
