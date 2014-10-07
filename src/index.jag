@@ -23,9 +23,10 @@
 
     <div id="login">
         <h2>Login</h2>
-        <p>
-            List of details about Library
-        </p>
+        <form>
+            User name: <input type="text" name="username"><br/>
+            Password: <input type="text" name="password"><br/>
+        </form>
 
     </div>
 
