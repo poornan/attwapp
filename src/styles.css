@@ -11,13 +11,19 @@ background-color: yellow;
 #nav {
     line-height:30px;
     background-color:#eeeeee;
-    height:700px;
+    height:800px;
     width:100px;
     float:left;
     padding:5px;
 }
 #section {
     width:350px;
+    float:left;
+    padding:10px;
+}
+
+#login {
+    width:200px;
     float:left;
     padding:10px;
 }
