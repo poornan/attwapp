@@ -8,17 +8,12 @@ background-color: yellow;
     text-align:center;
     padding:5px;
 }
-#nav {
-    line-height:30px;
-    background-color:#eeeeee;
-    height:800px;
-    width:100px;
-    float:left;
-    padding:5px;
-}
+
 #section {
+ line-height:30px;
     width:350px;
     float:left;
+     height:800px;
     padding:10px;
 }
 

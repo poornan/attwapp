@@ -9,14 +9,10 @@
         <h1>Article Topic Tagger</h1>
     </div>
 
-    <div id="nav">
-        London<br/>
-        Paris<br/>
-        Tokyo<br/>
-    </div>
+
 
     <div id="section">
-        <h2>London</h2>
+        <h2>Library</h2>
         <p>
            List of details about Library
         </p>
@@ -26,7 +22,7 @@
     </div>
 
     <div id="login">
-        <h2>London</h2>
+        <h2>Login</h2>
         <p>
             List of details about Library
         </p>
