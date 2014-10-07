@@ -1,41 +1,14 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <style>
-        header {
-        background-color:black;
-        color:white;
-        text-align:center;
-        padding:5px;
-        }
-        nav {
-        line-height:30px;
-        background-color:#eeeeee;
-        height:300px;
-        width:100px;
-        float:left;
-        padding:5px;
-        }
-        section {
-        width:350px;
-        float:left;
-        padding:10px;
-        }
-        footer {
-        background-color:black;
-        color:white;
-        clear:both;
-        text-align:center;
-        padding:5px;
-        }
-    </style>
-</head>
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles.css"></link></head>
+
 
 <body>
 
 <header>
-    <h1>City Gallery</h1>
+    <h1>Article Topic Tagger</h1>
 </header>
 
 <nav>
