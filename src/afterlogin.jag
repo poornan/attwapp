@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css"></link></head>
+
+<body>
+<div id="header">
+    <h1>Article Topic Tagger</h1>
+</div>
+
+
+
+<div id="section">
+    <table>
+        <tbody>
+        <tr>
+            <td>Add Content</td>
+            <td>Update Content</td>
+            <td>Delete Content</td>
+        </tr>
+        <tr>
+            <td>Add Tag</td>
+            <td>Update Tag</td>
+            <td>Delete Tag</td>
+        </tr>
+        <tr>
+            <td>Add Category</td>
+            <td>Update Category</td>
+            <td>Delete Category</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="login">
+    <h2>Login</h2>
+    <form>
+        User name: <input type="text" name="username"><br/>
+        Password: <input type="text" name="password"><br/>
+        <input type="submit" value="Login">
+    </form>
+
+</div>
+
+<div id="footer">
+    Copyright © W3Schools.com
+</div>
+
+</body>
+</html>
