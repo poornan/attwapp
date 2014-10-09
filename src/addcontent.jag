@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css"></link></head>
+
+<body>
+<div id="header">
+    <h1>After Login</h1>
+</div>
+
+
+
+<div id="section">
+    <form>
+    <table>
+        <tbody>
+
+        <tr>
+            <td>Title</td>
+            <td><input type="text" name="title"></td>
+
+        </tr>
+        <tr>
+            <td>Category type</td>
+            <td><select>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select></td>
+
+        </tr>
+        <tr>
+            <td>Presenter</td>
+            <td><input type="text" name="title"></td>
+
+        </tr>
+        <tr>
+            <td>Published Date</td>
+            <td><input type="text" name="date"></td>
+
+        </tr>
+        <tr>
+            <td>Level</td>
+            <td><input type="text" name="level"></td>
+
+        </tr>
+        <tr>
+            <td>Reads</td>
+            <td><input type="text" name="reads"></td>
+
+        </tr>
+
+
+
+        <tr>
+            <td>Url</td>
+            <td><input type="text" name="url"></td>
+
+        </tr>
+
+
+        <tr>
+            <td>  <input type="submit" value="Add"></td>
+            <td>  <input type="button" value="Cancel"></td>
+
+        </tr>
+
+
+
+
+        </tbody>
+    </table>
+    </form>
+    </div>
+
+
+
+
+<div id="footer">
+    Copyright © W3Schools.com
+</div>
+
+</body>
+</html>
