@@ -1,9 +1,13 @@
 <style>
 body{
-background-color: yellow;
+
+}
+#topic {
+padding-left:500px;
+
 }
 #header {
-    background-color:black;
+    background-color:black ;
     color:white;
     text-align:center;
     padding:5px;
@@ -13,17 +17,37 @@ background-color: yellow;
  line-height:30px;
     width:350px;
     float:left;
-     height:800px;
+     height:700px;
     padding:10px;
 }
 
-#login {
-    width:200px;
-    float:right;
-    padding:10px;
+#combine{
+ margin-left: 410px;
+}
+
+#changecontent
+{
+
+    width:500px;
+    height:550px;
+
+}
+
+
+
+
+#login
+{
+
+    width:300px;
+
+    margin-bottom: 410px;
+
+
+
 }
 #footer {
-    background-color:black;
+    background-color:black ;
     color:white;
     clear:both;
     text-align:center;

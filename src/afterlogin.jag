@@ -2,49 +2,84 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="styles.css"></link></head>
+    <link rel="stylesheet" type="text/css" href="styles1.css"></link></head>
 
 <body>
 <div id="header">
-    <h1>After Login</h1>
-</div>
-
-
-
-<div id="section">
-    <table>
+    <table id="topic">
         <tbody>
         <tr>
-            <td>Add Content</td>
-            <td>Update Content</td>
-            <td>Delete Content</td>
-        </tr>
-        <tr>
-            <td>Add Tag</td>
-            <td>Update Tag</td>
-            <td>Delete Tag</td>
-        </tr>
-        <tr>
-            <td>Add Category</td>
-            <td>Update Category</td>
-            <td>Delete Category</td>
+            <td><img src="logo.png" alt="logo" height="140" width="140" /> </td>
+            <td><h1>Article Topic Tagger</h1></td>
         </tr>
         </tbody>
+
     </table>
-</div>
 
-<div id="login">
-    <h2>Login</h2>
-    <form>
-        User name: <input type="text" name="username"><br/>
-        Password: <input type="text" name="password"><br/>
-        <input type="submit" value="Login">
-    </form>
 
 </div>
+
+<div id="section">
+
+
+    <table id="combine1">
+        <tr>
+         <td></td>
+            <td>name</td>
+            <td></td>
+            <td>Date </td>
+            <td><a href="index.jag">LOGOUT</a> </td>
+        </tr>
+
+
+        <tr>
+            <td></td>
+            <td>ADD </td>
+            <td>EDIT </td>
+            <td>DELETE</td>
+            <td>SEARCH </td>
+
+        </tr>
+
+
+        <tr>
+            <td>LIBRARY</td>
+            <td><a href="addcontent.jag"><img src="add.jpg" alt="Add" height="100" width="100" /></a> </td>
+            <td><a href="addcontent.jag"><img src="edit.jpg" alt="Add" height="100" width="100" /></a> </td>
+            <td><a href="addcontent.jag"><img src="delete.jpg" alt="Add" height="100" width="100" /></a> </td>
+            <td><a href="addcontent.jag"><img src="search.jpg" alt="Add" height="100" width="100" /></a> </td>
+
+        </tr>
+
+
+        <tr>
+            <td>CATEGORY</td>
+            <td><a href="addcontent.jag"><img src="add.jpg" alt="Add" height="100" width="100" /></a> </td>
+            <td><a href="addcontent.jag"><img src="edit.jpg" alt="Add" height="100" width="100" /></a> </td>
+            <td><a href="addcontent.jag"><img src="delete.jpg" alt="Add" height="100" width="100" /></a> </td>
+            <td><a href="addcontent.jag"><img src="search.jpg" alt="Add" height="100" width="100" /></a> </td>
+
+        </tr>
+
+        <tr>
+            <td>TAG</td>
+            <td><a href="addcontent.jag"><img src="add.jpg" alt="Add" height="100" width="100" /></a> </td>
+            <td><a href="addcontent.jag"><img src="edit.jpg" alt="Add" height="100" width="100" /></a> </td>
+            <td><a href="addcontent.jag"><img src="delete.jpg" alt="Add" height="100" width="100" /></a> </td>
+            <td><a href="addcontent.jag"><img src="search.jpg" alt="Add" height="100" width="100" /></a> </td>
+        </tr>
+    </table>
+
+
+
+
+</div>
+
+
+
 
 <div id="footer">
-    Copyright © W3Schools.com
+    Copyright © Article topic tagger
 </div>
 
 </body>

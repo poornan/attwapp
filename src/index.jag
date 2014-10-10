@@ -6,80 +6,76 @@
 
 <body>
 <div id="header">
-    <h1>After Login</h1>
+    <table id="topic">
+        <tbody>
+        <tr>
+            <td><img src="logo.png" alt="logo" height="140" width="140" /> </td>
+            <td><h1>Article Topic Tagger</h1></td>
+        </tr>
+        </tbody>
+
+    </table>
+
+
 </div>
 
-
-
 <div id="section">
-    <form>
-        <table>
-            <tbody>
-
-            <tr>
-                <td>Title</td>
-                <td><input type="text" name="title"></td>
-
-            </tr>
-            <tr>
-                <td>Category type</td>
-                <td><select>
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                </select></td>
-
-            </tr>
-            <tr>
-                <td>Presenter</td>
-                <td><input type="text" name="title"></td>
-
-            </tr>
-            <tr>
-                <td>Published Date</td>
-                <td><input type="text" name="date"></td>
-
-            </tr>
-            <tr>
-                <td>Level</td>
-                <td><input type="text" name="level"></td>
-
-            </tr>
-            <tr>
-                <td>Reads</td>
-                <td><input type="text" name="reads"></td>
-
-            </tr>
 
 
+        <table id="combine">
+        <tr>
+            <td>
+                <table id="changecontent">
+                <tbody>
+                  <tr><td style="background-color: DarkOrange;font-weight: bold;color:white;height:30px; ">Latest Content</td></tr>
+                  <tr><td>Hyperlinks</td></tr>
+                  <tr><td style="background-color:DodgerBlue;font-weight: bold;color:white ;height:30px;  ">Articles</td></tr>
+                   <tr><td>Hyperlinks</td></tr>
+                  <tr><td style="background-color:DarkOliveGreen;font-weight: bold;color:white;height:30px; ">Webinars</td></tr>
+                  <tr><td >Hyperlinks</td></tr>
+                  <tr><td style="background-color:DarkMagenta;font-weight: bold;color:white;height:30px;   ">Videos</td></tr>
+                  <tr><td>Hyperlinks</td></tr>
 
-            <tr>
-                <td>Url</td>
-                <td><input type="text" name="url"></td>
+                 </tbody>
+                </table>
+            </td>
+            <td>
+                 <form>
+                 <table id="login">
+                 <tbody>
+                  <tr>
+                        <td colspan="2" style="background-color: DarkOrange;font-weight: bold;color:white;height:30px; " > Login</td>
+                  </tr>
+                  <tr>
+                        <td> User name:</td>
+                        <td><input type="text" name="username"></td>
+                 </tr>
+                 <tr>
+                        <td> Password::</td>
+                        <td><input type="text" name="password"></td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td> <input type="submit" value="Cancel"> <input type="submit" value="Login"></td>
 
-            </tr>
-
-
-            <tr>
-                <td>  <input type="submit" value="Add"></td>
-                <td>  <input type="button" value="Cancel"></td>
-
-            </tr>
-
-
-
-
-            </tbody>
+               </tr>
+              </tbody>
+            </table>
+                    </form>
+                </td>
+         </tr>
         </table>
-    </form>
+
+
+
+
 </div>
 
 
 
 
 <div id="footer">
-    Copyright © W3Schools.com
+    Copyright © Article topic tagger
 </div>
 
 </body>
