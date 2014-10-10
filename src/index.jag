@@ -27,13 +27,13 @@
             <td>
                 <table id="changecontent">
                 <tbody>
-                  <tr><td style="background-color: DarkOrange;font-weight: bold;color:white;height:30px; ">Latest Content</td></tr>
+                  <tr><td style="background-color: black;font-weight: bold;color:white;height:30px; ">Latest Content</td></tr>
                   <tr><td>Hyperlinks</td></tr>
-                  <tr><td style="background-color:DodgerBlue;font-weight: bold;color:white ;height:30px;  ">Articles</td></tr>
+                  <tr><td style="background-color:black;font-weight: bold;color:white ;height:30px;  ">Articles</td></tr>
                    <tr><td>Hyperlinks</td></tr>
-                  <tr><td style="background-color:DarkOliveGreen;font-weight: bold;color:white;height:30px; ">Webinars</td></tr>
+                  <tr><td style="background-color:black;font-weight: bold;color:white;height:30px; ">Webinars</td></tr>
                   <tr><td >Hyperlinks</td></tr>
-                  <tr><td style="background-color:DarkMagenta;font-weight: bold;color:white;height:30px;   ">Videos</td></tr>
+                  <tr><td style="background-color:black;font-weight: bold;color:white;height:30px;   ">Videos</td></tr>
                   <tr><td>Hyperlinks</td></tr>
 
                  </tbody>

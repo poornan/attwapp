@@ -27,54 +27,13 @@
             <tbody>
 
             <tr>
-                <td colspan="2">ADD CATEGORY DETAILS</td>
+                <td colspan="2" style="background-color: DarkOrange;font-weight: bold;color:white;height:30px; ">ADD CATEGORY DETAILS</td>
 
 
             </tr>
-
-
-
-            <tr>
-                <td>Title</td>
+             <tr>
+                <td>Category Name</td>
                 <td><input type="text" name="title"></td>
-
-            </tr>
-            <tr>
-                <td>Category type</td>
-                <td><select>
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                </select></td>
-
-            </tr>
-            <tr>
-                <td>Presenter</td>
-                <td><input type="text" name="title"></td>
-
-            </tr>
-            <tr>
-                <td>Published Date</td>
-                <td><input type="text" name="date"></td>
-
-            </tr>
-            <tr>
-                <td>Level</td>
-                <td><input type="text" name="level"></td>
-
-            </tr>
-            <tr>
-                <td>Reads</td>
-                <td><input type="text" name="reads"></td>
-
-            </tr>
-
-
-
-            <tr>
-                <td>Url</td>
-                <td><input type="text" name="url"></td>
 
             </tr>
 

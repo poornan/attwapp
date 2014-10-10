@@ -27,7 +27,7 @@
             <tbody>
 
             <tr>
-                <td colspan="2">ADD LIBRARY DETAILS</td>
+                <td colspan="2" style="background-color: DarkOrange;font-weight: bold;color:white;height:30px; ">ADD LIBRARY DETAILS</td>
 
 
             </tr>
