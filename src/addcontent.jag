@@ -22,7 +22,7 @@
 <div id="section">
 
 
-    <form>
+    <form action="http://10.10.10.85:9763/attws/services/library/libraryService/library/" method="post">
         <table id="combine1">
             <tbody>
 
@@ -36,27 +36,27 @@
 
             <tr>
                 <td>Title</td>
-                <td><input type="text" name="title"></td>
+                <td><input type="text" name="title" ></td>
 
             </tr>
             <tr>
                 <td>Category type</td>
-                <td><select>
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
+                <td><select name="category_id">
+                    <option value="1">Article</option>
+                    <option value="2">Presentation</option>
+                    <option value="3">Video</option>
+                    <option value="4">Webinar</option>
                 </select></td>
 
             </tr>
             <tr>
                 <td>Presenter</td>
-                <td><input type="text" name="title"></td>
+                <td><input type="text" name="presenter"></td>
 
             </tr>
             <tr>
                 <td>Published Date</td>
-                <td><input type="text" name="date"></td>
+                <td><input type="text" name="published_date"></td>
 
             </tr>
             <tr>
@@ -75,6 +75,13 @@
             <tr>
                 <td>Url</td>
                 <td><input type="text" name="url"></td>
+
+            </tr>
+
+
+            <tr>
+                <td>Tag </td>
+                <td><input type="text" name="tag_id"></td>
 
             </tr>
 
