@@ -148,7 +148,7 @@ $(document).ready(function(){
   });
 function test(){
 var request = $.ajax({
-    url: "https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library/",
+/*    url: "https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library/",
     type: "POST",
     data: formData,
     //dataType: "application/json",
@@ -166,7 +166,12 @@ var request = $.ajax({
 
   request.fail(function( jqXHR, textStatus ) {
     alert( "Request failed: " + textStatus );
-  });
+  });*/
+  console.log(formData);
+      $.post("https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library/",formData,function(data,status){
+      console.log(data+"   "+status);
+        alert("Data: " + data + "\nStatus: " + status);
+
 }
 
 </script>
