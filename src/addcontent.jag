@@ -107,7 +107,7 @@
     Copyright © Article topic tagger
 </div>
 <script>
-var title = $("#title").val();
+var title = $("#title").value;
 var category_id = $("#category_id").val();
 var presenter = $("#presenter").val();
 var published_date = $("#published_date").val();
