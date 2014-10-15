@@ -108,7 +108,6 @@
 </div>
 <script>
 var title = $("#title").val();
-console.log(title);
 var category_id = $("#category_id").val();
 var presenter = $("#presenter").val();
 var published_date = $("#published_date").val();
@@ -135,8 +134,8 @@ $(document).ready(function(){
     $.post("http://10.10.10.57:9763/attws/services/library/libraryService/library/",formData,function(data,status){
     console.log(data+"   "+status);
       alert("Data: " + data + "\nStatus: " + status);*/
-      test();
       console.log(formData);
+      test();
     });
 
 
