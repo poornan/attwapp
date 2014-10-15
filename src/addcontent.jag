@@ -168,7 +168,7 @@ function test(){
     alert( "Request failed: " + textStatus );
   });*/
   console.log(formData);
-      $.post("https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library/",
+      $.post("http://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library/",
       formData,
       function(data){
       console.log(data);
