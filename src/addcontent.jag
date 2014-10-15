@@ -128,7 +128,7 @@ formData["tag_id"]= tag_id;
 console.log(formData);
 }
 
-
+var response;
 
 
 
@@ -172,7 +172,9 @@ function test(){
       formData,
       function(data){
       console.log(data);
-        alert("Data: " + data );
+        alert("Data: " + data.response );
+        response = data.response;
+        console.log(response.toString());
 
 });}
 
