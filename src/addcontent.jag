@@ -168,9 +168,11 @@ function test(){
     alert( "Request failed: " + textStatus );
   });*/
   console.log(formData);
-      $.post("https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library/",formData,function(data,status){
-      console.log(data+"   "+status);
-        alert("Data: " + data + "\nStatus: " + status);
+      $.post("https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library/",
+      formData,
+      function(data){
+      console.log(data);
+        alert("Data: " + data );
 
 });}
 
