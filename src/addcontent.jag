@@ -39,7 +39,7 @@
 
             <tr>
                 <td>Title</td>
-                <td><input type="text" name="title" id="title"></td>
+                <td><input type="text" name="title1" id="title" value="" /></td>
 
             </tr>
             <tr>
@@ -107,7 +107,7 @@
     Copyright © Article topic tagger
 </div>
 <script>
-var title = $("#title").value();
+var title = $("#title").val();
 var category_id = $("#category_id").val();
 var presenter = $("#presenter").val();
 var published_date = $("#published_date").val();
