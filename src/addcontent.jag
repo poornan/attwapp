@@ -2,14 +2,16 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="styles1.css"></link></head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles1.css"></link>
+</head>
 
 <body>
 <div id="header">
     <table id="topic">
         <tbody>
         <tr>
-            <td><img src="logo.png" alt="logo" height="140" width="140" /> </td>
+            <td><img src="logo.png" alt="logo" height="140" width="140"/></td>
             <td><h1>Article Topic Tagger</h1></td>
         </tr>
         </tbody>
@@ -22,26 +24,27 @@
 <div id="section">
 
 
-    <form action="http://10.10.10.85:9763/attws/services/library/libraryService/library/" method="post">
+    <form action="#" method="post">
         <table id="combine1">
             <tbody>
 
             <tr>
-                <td colspan="2" style="background-color: DarkOrange;font-weight: bold;color:white;height:30px; ">ADD LIBRARY DETAILS</td>
+                <td colspan="2" style="background-color: DarkOrange;font-weight: bold;color:white;height:30px; ">ADD
+                    LIBRARY DETAILS
+                </td>
 
 
             </tr>
-
 
 
             <tr>
                 <td>Title</td>
-                <td><input type="text" name="title" ></td>
+                <td><input type="text" name="title" id="title"></td>
 
             </tr>
             <tr>
                 <td>Category type</td>
-                <td><select name="category_id">
+                <td><select name="category_id" id="category_id">
                     <option value="1">Article</option>
                     <option value="2">Presentation</option>
                     <option value="3">Video</option>
@@ -51,48 +54,45 @@
             </tr>
             <tr>
                 <td>Presenter</td>
-                <td><input type="text" name="presenter"></td>
+                <td><input type="text" name="presenter" id="presenter"></td>
 
             </tr>
             <tr>
                 <td>Published Date</td>
-                <td><input type="text" name="published_date"></td>
+                <td><input type="text" name="published_date" id="published_date"></td>
 
             </tr>
             <tr>
                 <td>Level</td>
-                <td><input type="text" name="level"></td>
+                <td><input type="text" name="level" id="level"></td>
 
             </tr>
             <tr>
                 <td>Reads</td>
-                <td><input type="text" name="reads"></td>
+                <td><input type="text" name="reads" id="reads"></td>
 
             </tr>
-
 
 
             <tr>
                 <td>Url</td>
-                <td><input type="text" name="url"></td>
+                <td><input type="text" name="url" id="url"></td>
 
             </tr>
 
 
             <tr>
-                <td>Tag </td>
-                <td><input type="text" name="tag_id"></td>
+                <td>Tag</td>
+                <td><input type="text" name="tag_id" id="tag_id"></td>
 
             </tr>
 
 
             <tr>
-                <td>  </td>
-                <td> <input type="submit" value="Add"> <input type="button" value="Cancel"></td>
+                <td></td>
+                <td><input type="button" id="submit" value="Add"/> <input type="button" value="Cancel"/></td>
 
             </tr>
-
-
 
 
             </tbody>
@@ -100,16 +100,70 @@
     </form>
 
 
-
-
 </div>
-
-
 
 
 <div id="footer">
     Copyright © Article topic tagger
 </div>
+<script>
+var title = $("#title").val();
+console.log(title);
+var category_id = $("#category_id").val();
+var presenter = $("#presenter").val();
+var published_date = $("#published_date").val();
+var level = $("#level").val();
+var reads = $("#reads").val();
+var url = $("#url").val();
+var tag_id = $("#tag_id").val();
+
+var formData={};
+formData["title"]= title;
+formData["category_id"]= category_id;
+formData["presenter"]= presenter;
+formData["published_date"]= published_date;
+formData["level"]= level;
+formData["reads"]= reads;
+formData["url"]= url;
+formData["tag_id"]= tag_id;
+console.log(formData);
+
+//var formData = {"title": title, "category_id": category_id, "": presenter, "": published_date, "":level, "":reads, "": url, "":tag_id};
+$(document).ready(function(){
+  $("#submit").click(function(){
+  /*console.log(formData);
+    $.post("http://10.10.10.57:9763/attws/services/library/libraryService/library/",formData,function(data,status){
+    console.log(data+"   "+status);
+      alert("Data: " + data + "\nStatus: " + status);*/
+      test();
+    });
+
+
+  });
+function test(){
+var request = $.ajax({
+    url: "https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library/",
+    type: "POST",
+    data: formData,
+    //dataType: "application/json",
+    crossDomain : true,
+    dataType: 'application/json',
+    xhrFields: {
+          withCredentials: true
+          }
+  });
+
+  request.done(function( data, status ) {
+    //$( "#log" ).html( msg );
+    alert("Data: " + data + "\nStatus: " + status);
+  });
+
+  request.fail(function( jqXHR, textStatus ) {
+    alert( "Request failed: " + textStatus );
+  });
+}
+
+</script>
 
 </body>
 </html>
