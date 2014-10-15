@@ -148,7 +148,7 @@ $(document).ready(function(){
   });
 function test(){
 var request = $.ajax({
-    url: "https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library/",
+    url: "http://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library/",
     type: "POST",
     data: formData,
     //dataType: "application/json",
