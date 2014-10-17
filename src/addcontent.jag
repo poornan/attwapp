@@ -104,17 +104,42 @@ if ( title =="" || category_id =="" || presenter=="" || published_date =="" || l
 alert('All fields are mandatory');
 e.preventDefault();
 }
+else
+{
 
-formData["title"]= title;
-formData["category_id"]= category_id;
-formData["presenter"]= presenter;
-formData["published_date"]= published_date;
-formData["level"]= level;
-formData["reads"]= reads;
-formData["url"]= url;
-formData["tag_id"]= tag_id;
- console.log(formData);
-test();
+    if($.isNumeric(reads)) {
+
+    if($.isNumeric(tag_id))
+    {
+    formData["title"]= title;
+    formData["category_id"]= category_id;
+    formData["presenter"]= presenter;
+    formData["published_date"]= published_date;
+    formData["level"]= level;
+    formData["reads"]= reads;
+    formData["url"]= url;
+    formData["tag_id"]= tag_id;
+    console.log(formData);
+    test();
+    }
+
+    else
+    {
+        alert(' tag_id  must be numeric');
+    }
+
+
+    }
+
+    else
+    {
+        alert(' reads must be numeric');
+    }
+}
+
+
+}
+
 });
 });
 function test(){
