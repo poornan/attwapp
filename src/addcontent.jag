@@ -86,66 +86,7 @@
     Copyright © Article topic tagger
 </div>
 <script>
-var formData = {};
-var response;
 
-$(document).ready(function(){
-$("#submit").click(function(){
-var title = $("#title").val();
-var category_id = $("#category_id").val();
-var presenter = $("#presenter").val();
-var published_date = $("#published_date").val();
-var level = $("#level").val();
-var reads = $("#reads").val();
-var url = $("#url").val();
-var tag_id = $("#tag_id").val();
-
-// Checking Empty Fields
-if ( title === "" || category_id === "" || presenter === "" || published_date ===  "" || level === "" || reads  ==="" || url === "" || tag_id === "" ) {
-alert('All fields are mandatory');
-//e.preventDefault();
-}
-else
-{
-
-    if($.isNumeric(reads)) {
-
-    if($.isNumeric(tag_id))
-    {
-    formData["title"]= title;
-    formData["category_id"]= category_id;
-    formData["presenter"]= presenter;
-    formData["published_date"]= published_date;
-    formData["level"]= level;
-    formData["reads"]= reads;
-    formData["url"]= url;
-    formData["tag_id"]= tag_id;
-    console.log(formData);
-    test();
-    }
-
-    else
-    {
-        alert(' tag_id  must be numeric');
-    }
-
-
-    }
-
-    else
-    {
-        alert(' reads must be numeric');
-    }
-}
-
-
-}
-
-);
-});
-function test(){
- console.log(formData);
-  $.post("https://appserver.dev.cloud.wso2.com/t/anantha
 var formData = {};
 var response;
 $(document).ready(function(){
