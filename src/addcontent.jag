@@ -160,8 +160,8 @@ function test(){
 
 
 function (xml){
-   var Content = $(xml).find('Content').first().text();
-    alert(Content);
+  // var Content = $(xml).find('Content').first().text();
+    alert(xml.getResponseHeader("Content"));
     }
 
 
