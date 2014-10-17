@@ -2,6 +2,7 @@
 <html>
 
 <head>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles1.css"></link></head>
 
 <body>
@@ -15,53 +16,62 @@
         </tbody>
 
     </table>
-
-
 </div>
-
 <div id="section">
-
-
-    <form>
-        <table id="combine1">
+<form>
+<table id="combine1">
             <tbody>
-
             <tr>
                 <td colspan="2" style="background-color: DarkOrange;font-weight: bold;color:white;height:30px; ">ADD CATEGORY DETAILS</td>
-
-
-            </tr>
+             </tr>
              <tr>
                 <td>Category Name</td>
-                <td><input type="text" name="title"></td>
-
-            </tr>
-
-
-            <tr>
+                <td><input type="text" name="title" id="title"></td>
+             </tr>
+                <tr>
                 <td>  </td>
-                <td> <input type="submit" value="Add"> <input type="button" value="Cancel"></td>
-
-            </tr>
-
-
-
-
-            </tbody>
+                <td> <input type="submit" value="Add" id="submit> <input type="button" value="Cancel"></td>
+             </tr>
+           </tbody>
         </table>
     </form>
-
-
-
-
 </div>
-
-
-
-
 <div id="footer">
     Copyright © Article topic tagger
 </div>
+
+<script>
+var formData={};
+function readForm(){
+var title = $("#title").val();
+formData["title"]= title;
+console.log(formData);
+}
+
+var response;
+$(document).ready(function(){
+  $("#submit").click(function(){
+    readForm();
+      console.log(formData);
+      test();
+    });
+
+
+  });
+function test(){
+ console.log(formData);
+      $.post("http://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library/",
+      formData,
+      function(data){
+      console.log(data);
+        alert("Data: " + data.response );
+        response = data.response;
+        console.log(response.toString());
+
+});}
+
+</script>
+
 
 </body>
 </html>

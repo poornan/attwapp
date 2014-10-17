@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles1.css"></link></head>
 
 <body>
@@ -15,94 +16,65 @@
         </tbody>
 
     </table>
-
-
 </div>
 
 <div id="section">
-
-
-    <form>
+ <form>
         <table id="combine1">
             <tbody>
 
             <tr>
                 <td colspan="2">ADD TAG DETAILS</td>
-
-
             </tr>
-
-
-
             <tr>
                 <td>Title</td>
-                <td><input type="text" name="title"></td>
+                <td><input type="text" name="tag_name" id="tag_name"></td>
 
             </tr>
-            <tr>
-                <td>Category type</td>
-                <td><select>
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                </select></td>
-
-            </tr>
-            <tr>
-                <td>Presenter</td>
-                <td><input type="text" name="title"></td>
-
-            </tr>
-            <tr>
-                <td>Published Date</td>
-                <td><input type="text" name="date"></td>
-
-            </tr>
-            <tr>
-                <td>Level</td>
-                <td><input type="text" name="level"></td>
-
-            </tr>
-            <tr>
-                <td>Reads</td>
-                <td><input type="text" name="reads"></td>
-
-            </tr>
-
-
-
-            <tr>
-                <td>Url</td>
-                <td><input type="text" name="url"></td>
-
-            </tr>
-
-
-            <tr>
+             <tr>
                 <td>  </td>
-                <td> <input type="submit" value="Add"> <input type="button" value="Cancel"></td>
+                <td> <input type="submit" value="Add" id="submit"> <input type="button" value="Cancel"></td>
 
             </tr>
-
-
-
-
-            </tbody>
+</tbody>
         </table>
     </form>
-
-
-
-
 </div>
-
-
-
-
 <div id="footer">
     Copyright © Article topic tagger
 </div>
+
+<script>
+var formData={};
+function readForm(){
+var tag_name = $("#tag_name").val();
+formData["tag_name"]= tag_name;
+console.log(formData);
+}
+
+var response;
+$(document).ready(function(){
+  $("#submit").click(function(){
+    readForm();
+      console.log(formData);
+      test();
+    });
+
+
+  });
+function test(){
+ console.log(formData);
+      $.post("http://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/addTag/",
+      formData,
+      function(data){
+      console.log(data);
+        alert("Data: " + data.response );
+        response = data.response;
+        console.log(response.toString());
+
+});}
+
+</script>
 
 </body>
 </html>

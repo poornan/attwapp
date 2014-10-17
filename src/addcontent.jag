@@ -17,31 +17,21 @@
         </tbody>
 
     </table>
-
-
 </div>
 
 <div id="section">
-
-
-    <form action="#" method="post">
+ <form action="#" method="post">
         <table id="combine1">
             <tbody>
-
             <tr>
                 <td colspan="2" style="background-color: DarkOrange;font-weight: bold;color:white;height:30px; ">ADD
                     LIBRARY DETAILS
                 </td>
-
-
-            </tr>
-
-
-            <tr>
+             </tr>
+             <tr>
                 <td>Title</td>
                 <td><input type="text" name="title" id="title"  /></td>
-
-            </tr>
+             </tr>
             <tr>
                 <td>Category type</td>
                 <td><select name="category_id" id="category_id">
@@ -55,7 +45,6 @@
             <tr>
                 <td>Presenter</td>
                 <td><input type="text" name="presenter" id="presenter"></td>
-
             </tr>
             <tr>
                 <td>Published Date</td>
@@ -79,30 +68,20 @@
                 <td><input type="text" name="url" id="url"></td>
 
             </tr>
-
-
-            <tr>
+             <tr>
                 <td>Tag</td>
                 <td><input type="text" name="tag_id" id="tag_id"></td>
-
             </tr>
-
-
-            <tr>
+             <tr>
                 <td></td>
                 <td><input type="button" id="submit" value="Add"/> <input type="button" value="Cancel"/></td>
-
-            </tr>
-
-
+                </tr>
             </tbody>
         </table>
     </form>
 
 
 </div>
-
-
 <div id="footer">
     Copyright © Article topic tagger
 </div>
