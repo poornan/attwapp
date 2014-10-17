@@ -212,13 +212,7 @@ function test(){
   alert("Data: " + data.response );
   response = data.response;
   console.log(response.toString());
-}nesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library/",
-  formData,
-  function(data){
-  console.log(data);
-  alert("Data: " + data.response );
-  response = data.response;
-  console.log(response.toString());
+});
 }
 
 
