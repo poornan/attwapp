@@ -149,20 +149,21 @@ function test(){
   console.log(formData);
       $.post("https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library/",
       formData,
-      function(data){
-      console.log(data);
-        alert("Data: " + data.response );
-        response = data.response;
-        console.log(response.toString());
+//      function(data){
+//      console.log(data);
+//        alert("Data: " + data.response );
+//        response = data.response;
+//        console.log(response.toString());
+//
+//}
 
-}
 
-////
-//function (xml){
-//    var Content = $(xml).find('Content').first().text();
-//    alert(Content);
-//    }
-////
+
+function (xml){
+   var Content = $(xml).find('Content').first().text();
+    alert(Content);
+    }
+
 
 );}
 
