@@ -5,7 +5,7 @@ app.controller('LibraryController', ['$http',function($http){
 this.libraries;// = librariesData;
 
 var library = this;
-    $http.get('http://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library').success(function(data){
+    $http.get('https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library').success(function(data){
     console.log(data);
     library.libraries = data;
     });
