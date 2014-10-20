@@ -17,31 +17,21 @@
         </tbody>
 
     </table>
-
-
 </div>
 
 <div id="section">
-
-
-    <form action="#" method="post">
+ <form action="#" method="post">
         <table id="combine1">
             <tbody>
-
             <tr>
                 <td colspan="2" style="background-color: DarkOrange;font-weight: bold;color:white;height:30px; ">ADD
                     LIBRARY DETAILS
                 </td>
-
-
-            </tr>
-
-
-            <tr>
+             </tr>
+             <tr>
                 <td>Title</td>
                 <td><input type="text" name="title" id="title"  /></td>
-
-            </tr>
+             </tr>
             <tr>
                 <td>Category type</td>
                 <td><select name="category_id" id="category_id">
@@ -55,11 +45,10 @@
             <tr>
                 <td>Presenter</td>
                 <td><input type="text" name="presenter" id="presenter"></td>
-
             </tr>
             <tr>
                 <td>Published Date</td>
-                <td><input type="text" name="published_date" id="published_date"></td>
+                <td><input type="date" name="published_date" id="published_date"></td>
 
             </tr>
             <tr>
@@ -79,36 +68,29 @@
                 <td><input type="text" name="url" id="url"></td>
 
             </tr>
-
-
-            <tr>
+             <tr>
                 <td>Tag</td>
                 <td><input type="text" name="tag_id" id="tag_id"></td>
-
             </tr>
-
-
-            <tr>
+             <tr>
                 <td></td>
                 <td><input type="button" id="submit" value="Add"/> <input type="button" value="Cancel"/></td>
-
-            </tr>
-
-
+                </tr>
             </tbody>
         </table>
     </form>
 
 
 </div>
-
-
 <div id="footer">
     Copyright © Article topic tagger
 </div>
 <script>
-var formData={};
-function readForm(){
+
+var formData = {};
+var response;
+$(document).ready(function(){
+$("#submit").click(function(){
 var title = $("#title").val();
 var category_id = $("#category_id").val();
 var presenter = $("#presenter").val();
@@ -117,66 +99,66 @@ var level = $("#level").val();
 var reads = $("#reads").val();
 var url = $("#url").val();
 var tag_id = $("#tag_id").val();
-formData["title"]= title;
-formData["category_id"]= category_id;
-formData["presenter"]= presenter;
-formData["published_date"]= published_date;
-formData["level"]= level;
-formData["reads"]= reads;
-formData["url"]= url;
-formData["tag_id"]= tag_id;
-console.log(formData);
+
+// Checking Empty Fields
+if ( title === "" || category_id === "" || presenter === "" || published_date ===  "" || level === "" || reads  ==="" || url === "" || tag_id === "" ) {
+alert('All fields are mandatory');
+//e.preventDefault();
+}
+else
+{
+
+    if($.isNumeric(reads)) {
+
+    if($.isNumeric(tag_id))
+    {
+    formData.title= title;
+    formData.category_id= category_id;
+    formData.presenter= presenter;
+    formData.published_date= published_date;
+    formData.level= level;
+    formData.reads= reads;
+    formData.url= url;
+    formData.tag_id= tag_id;
+    console.log(formData);
+    test();
+    }
+
+    else
+    {
+        alert(' tag_id  must be numeric');
+    }
+
+
+    }
+
+    else
+    {
+        alert(' reads must be numeric');
+    }
 }
 
-var response;
 
+}
 
+);
+});
 
-//var formData = {"title": title, "category_id": category_id, "": presenter, "": published_date, "":level, "":reads, "": url, "":tag_id};
-$(document).ready(function(){
-  $("#submit").click(function(){
-  /*console.log(formData);
-    $.post("http://10.10.10.57:9763/attws/services/library/libraryService/library/",formData,function(data,status){
-    console.log(data+"   "+status);
-      alert("Data: " + data + "\nStatus: " + status);*/
-      readForm();
-      console.log(formData);
-      test();
-    });
-
-
-  });
 function test(){
-/*var request = $.ajax({
-    url: "https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library/",
-    type: "POST",
-    data: formData,
-    //dataType: "application/json",
-    crossDomain : true,
-    dataType: 'application/json',
-    xhrFields: {
-          withCredentials: true
-          }
-  });
+ console.log(formData);
+  $.post("https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library/",
+  formData,
+  function(data){
+  console.log(data);
+  alert("Data: " + data.response );
+  response = data.response;
+  console.log(response.toString());
+});
+}
 
-  request.done(function( data, status ) {
-    //$( "#log" ).html( msg );
-    alert("Data: " + data + "\nStatus: " + status);
-  });
 
-  request.fail(function( jqXHR, textStatus ) {
-    alert( "Request failed: " + textStatus );
-  });*/
-  console.log(formData);
-      $.post("http://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library/",
-      formData,
-      function(data){
-      console.log(data);
-        alert("Data: " + data.response );
-        response = data.response;
-        console.log(response.toString());
 
-});}
+
 
 </script>
 
