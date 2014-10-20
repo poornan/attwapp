@@ -1,3 +1,4 @@
+var x;
 (function(){
 var addLibrary = angular.module('addLibrary', []);
 addLibrary.controller('AddController', ['$http', 'transformRequestAsFormPost', function($http, transformRequestAsFormPost){
@@ -14,7 +15,8 @@ addLibrary.controller('AddController', ['$http', 'transformRequestAsFormPost', f
                           .success(function(data) {
                               console.log(data);
                               console.log(data.message);
-
+                               this.formData = {};
+                               x= data;
                               /*if (!data.success) {
                               	// if not successful, bind errors to error variables
                                   //$scope.errorName = data.errors.name;
@@ -23,21 +25,22 @@ addLibrary.controller('AddController', ['$http', 'transformRequestAsFormPost', f
                               	// if successful, bind success message to message
 //                                  $scope.message = data.message;
                               }*/
+                              var test;
                               function checkTags(){
                               for (var i = 0; i < data.response.tags.length; i++) {
-                              var test;
+
                                   if (data.response.tags[i].result=="SUCCESSFUL") {
                                   test = true;
                                   } else {
                                   test = false;
                                   }
                               }
-                              return test;
+
                               }
                               if (data.status===200 &&
                                   data.response.Content=="SUCCESSFUL" &&
                                   data.response.Library=="SUCCESSFUL" &&
-                                  checkTags()){
+                                  test){
                                     this.formData = {};
                                     console.log(this.formData);
                                   }
