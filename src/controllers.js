@@ -42,6 +42,7 @@ addLibrary.controller('AddController', ['$http', 'transformRequestAsFormPost', f
                                   data.response.Library=="SUCCESSFUL" &&
                                   test){
                                     this.formData = {};
+                                    alert("successfully added");
                                     console.log(this.formData);
                                   }
                           });
