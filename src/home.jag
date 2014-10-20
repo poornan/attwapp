@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="utf-8">
+    <title>Article Topic Tagger</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+</head>
+<body>
+
+<p>Nothing here {{'yet' + '!'}}</p>
+
+<div id="section">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+    <form action="#" method="post">
+        <h2>Article Topic Tagger  <small> Add new library content.</small></h2>
+        <hr class="colorgraph">
+        <div class="form-group">
+            <input type="text" name="title" id="title" class="form-control input-sl" placeholder="Title" tabindex="3">
+        </div>
+        <div class="form-group">
+            <select class="form-control input-sl" name="category_id" id="category_id">
+                <option value="1">Article</option>
+                <option value="2">Presentation</option>
+                <option value="3">Video</option>
+                <option value="4">Webinar</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="text" name="presenter" id="presenter" class="form-control input-sl" placeholder="Presenter" tabindex="3">
+        </div>
+        <div class="form-group">
+            <input type="text" name="published_date" id="published_date" class="form-control input-sl" placeholder="Published Date" tabindex="3">
+        </div>
+        <div class="form-group">
+            <input type="text" name="level" id="level" class="form-control input-sl" placeholder="Level" tabindex="3">
+        </div>
+        <div class="form-group">
+            <input type="text" name="reads" id="reads" class="form-control input-sl" placeholder="Reads" tabindex="3">
+        </div>
+        <div class="form-group">
+            <input type="text" name="url" id="url" class="form-control input-sl" placeholder="URL" tabindex="3">
+        </div>
+        <div class="form-group">
+            <input type="text" name="tag_id" id="tag_id" class="form-control input-sl" placeholder="Tags" tabindex="3">
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <input class="btn btn-sl btn-primary btn-block" type="button" id="submit" value="Add"/>
+
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <input class="btn btn-sl btn-primary btn-block" type="button" value="Cancel"/>
+
+            </div>
+        </div>
+    </form>
+        </div>
+</div>
+<div id="footer">Copyright © Article topic tagger</div>
+
+</body>
+</html>
