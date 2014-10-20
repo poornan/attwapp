@@ -1,12 +1,49 @@
 (function(){
-var app = angular.module('ATT', []);
+var addLibrary = angular.module('addLibrary', []);
+addLibrary.controller('AddController', ['$http', function($http){
+  this.formData = {};
+  this.processForm = function() {
+                  console.log(this.formData);
+                  $http({
+                          method  : 'POST',
+                          url     : 'https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library',
+                          data    : this.formData,  // pass in data as strings
+                          headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+                      })
+                          .success(function(data) {
+                              console.log(data);
 
-app.controller('LibraryController', ['$http',function($http){
+                              if (!data.success) {
+                              	// if not successful, bind errors to error variables
+                                  $scope.errorName = data.errors.name;
+                                  $scope.errorSuperhero = data.errors.superheroAlias;
+                              } else {
+                              	// if successful, bind success message to message
+                                  $scope.message = data.message;
+                              }
+                          });
+  			};
+
+}]);
+
+var app = angular.module('ATT', []);
+/*app.config(function ($httpProvider) {
+            $httpProvider.defaults.withCredentials = true;
+            delete $httpProvider.defaults.headers.common['X-Requested-With'];
+            $httpProvider.defaults.headers.common = {
+                                                            'Access-Control-Allow-Origin': '*',
+                                                            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+                                                            'Access-Control-Allow-Headers': 'Content-Type, X-Requested-With',
+                                                            'Access-Control-Allow-Credentials': true
+                                                            };
+        $httpProvider.defaults.useXDomain = true;
+    });*/
+
+app.controller('LibraryController', ['$http', function($http){
 this.libraries;// = librariesData;
 
 var library = this;
     $http.get('https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library').success(function(data){
-    console.log(data);
     library.libraries = data;
     });
 }]);
@@ -2033,5 +2070,7 @@ var librariesData = [
                             "url": "me.me"
                         }
                     ];*/
+
+
 
 })();

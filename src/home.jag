@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="addLibrary">
 <head>
     <meta charset="utf-8">
     <title>Article Topic Tagger</title>
@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/app.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="controllers.js"></script>
 
 </head>
 <body>
@@ -15,14 +16,14 @@
 
 <div id="section">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-    <form action="#" method="post">
+    <form ng-controller="AddController as addCtrl" ng-submit="addCtrl.processForm()">
         <h2>Article Topic Tagger  <small> Add new library content.</small></h2>
         <hr class="colorgraph">
         <div class="form-group">
-            <input type="text" name="title" id="title" class="form-control input-sl" placeholder="Title" tabindex="3">
+            <input type="text" ng-model="addCtrl.formData.title" name="title" id="title" class="form-control input-sl" placeholder="Title" tabindex="3">
         </div>
         <div class="form-group">
-            <select class="form-control input-sl" name="category_id" id="category_id">
+            <select class="form-control input-sl" ng-model="addCtrl.formData.category_id" name="category_id" id="category_id">
                 <option value="1">Article</option>
                 <option value="2">Presentation</option>
                 <option value="3">Video</option>
@@ -30,30 +31,30 @@
             </select>
         </div>
         <div class="form-group">
-            <input type="text" name="presenter" id="presenter" class="form-control input-sl" placeholder="Presenter" tabindex="3">
+            <input type="text" ng-model="addCtrl.formData.presenter" name="presenter" id="presenter" class="form-control input-sl" placeholder="Presenter" tabindex="3">
         </div>
         <div class="form-group">
-            <input type="text" name="published_date" id="published_date" class="form-control input-sl" placeholder="Published Date" tabindex="3">
+            <input type="text" ng-model="addCtrl.formData.published_date" name="published_date" id="published_date" class="form-control input-sl" placeholder="Published Date" tabindex="3">
         </div>
         <div class="form-group">
-            <input type="text" name="level" id="level" class="form-control input-sl" placeholder="Level" tabindex="3">
+            <input type="text" ng-model="addCtrl.formData.level" name="level" id="level" class="form-control input-sl" placeholder="Level" tabindex="3">
         </div>
         <div class="form-group">
-            <input type="text" name="reads" id="reads" class="form-control input-sl" placeholder="Reads" tabindex="3">
+            <input type="text" ng-model="addCtrl.formData.reads" name="reads" id="reads" class="form-control input-sl" placeholder="Reads" tabindex="3">
         </div>
         <div class="form-group">
-            <input type="text" name="url" id="url" class="form-control input-sl" placeholder="URL" tabindex="3">
+            <input type="text" ng-model="addCtrl.formData.url" name="url" id="url" class="form-control input-sl" placeholder="URL" tabindex="3">
         </div>
         <div class="form-group">
-            <input type="text" name="tag_id" id="tag_id" class="form-control input-sl" placeholder="Tags" tabindex="3">
+            <input type="text" ng-model="addCtrl.formData.tag_id" name="tag_id" id="tag_id" class="form-control input-sl" placeholder="Tags" tabindex="3">
         </div>
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6">
-                <input class="btn btn-sl btn-primary btn-block" type="button" id="submit" value="Add"/>
+                <input class="btn btn-sl btn-primary btn-block" type="submit" id="submit" value="Add"/>
 
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6">
-                <input class="btn btn-sl btn-primary btn-block" type="button" value="Cancel"/>
+                <input class="btn btn-sl btn-primary btn-block" type="reset" value="Cancel"/>
 
             </div>
         </div>
