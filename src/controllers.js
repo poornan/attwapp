@@ -8,8 +8,8 @@ addLibrary.controller('AddController', ['$http', 'transformRequestAsFormPost', f
                           method  : 'POST',
                           url     : 'https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library',
                           data    : this.formData,  // pass in data as strings
-                          transformRequest: transformRequestAsFormPost
-                          //headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+                          transformRequest: transformRequestAsFormPost,
+                          headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
                       })
                           .success(function(data) {
                               console.log(data);
