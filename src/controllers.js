@@ -39,6 +39,7 @@ addLibrary.controller('AddController', ['$http', 'transformRequestAsFormPost', f
                                   data.response.Library=="SUCCESSFUL" &&
                                   checkTags()){
                                     this.formData = {};
+                                    console.log(this.formData);
                                   }
                           });
   			};
