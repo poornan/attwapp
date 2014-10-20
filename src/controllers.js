@@ -37,7 +37,7 @@ addLibrary.factory(
 
                     var headers = getHeaders();
 
-                    headers[ "Content-type" ] = "application/x-www-form-urlencoded; charset=utf-8";
+                    //headers[ "Content-type" ] = "application/x-www-form-urlencoded; charset=utf-8";
 
                     return( serializeData( data ) );
 
