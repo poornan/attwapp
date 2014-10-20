@@ -15,14 +15,31 @@ addLibrary.controller('AddController', ['$http', 'transformRequestAsFormPost', f
                               console.log(data);
                               console.log(data.message);
 
-                              if (!data.success) {
+                              /*if (!data.success) {
                               	// if not successful, bind errors to error variables
                                   //$scope.errorName = data.errors.name;
 //                                  $scope.errorSuperhero = data.errors.superheroAlias;
                               } else {
                               	// if successful, bind success message to message
 //                                  $scope.message = data.message;
+                              }*/
+                              function checkTags(){
+                              for (var i = 0; i < data.response.tags.length; i++) {
+                              var test;
+                                  if (data.response.tags[i].result=="SUCCESSFUL") {
+                                  test = true;
+                                  } else {
+                                  test = false;
+                                  }
                               }
+                              return test;
+                              }
+                              if (data.status===200 &&
+                                  data.response.Content=="SUCCESSFUL" &&
+                                  data.response.Library=="SUCCESSFUL" &&
+                                  checkTags()){
+                                    this.formData = {};
+                                  }
                           });
   			};
 
