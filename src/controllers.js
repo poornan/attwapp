@@ -1,6 +1,6 @@
 (function(){
 var addLibrary = angular.module('addLibrary', []);
-addLibrary.controller('AddController', ['$http', transformRequestAsFormPost, function($http, transformRequestAsFormPost){
+addLibrary.controller('AddController', ['$http', 'transformRequestAsFormPost', function($http, transformRequestAsFormPost){
   this.formData = {};
   this.processForm = function() {
                   console.log(this.formData);
