@@ -82,11 +82,12 @@ addLibrary.factory(
 
                         var value = data[ name ];
 
-                        buffer.push(
+                        /*buffer.push(
                             encodeURIComponent( name ) +
                             "=" +
                             encodeURIComponent( ( value == null ) ? "" : value )
-                        );
+                        );*/
+                        buffer.push(name+"=" +( value == null ) ? "" : value );
 
                     }
 
