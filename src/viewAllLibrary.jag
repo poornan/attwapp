@@ -228,7 +228,7 @@
                 <td>{{library.content.presenter}}{{library.webinar.presenter}}</td>
                 <td>{{library.content.level}}</td>
                 <td>{{library.content.reads}}</td>
-                <td><span ng-repeat="tag in library.tags">{{tag.tagName}}{{$last ? '' : ', '}}</span></td>
+                <td><span ng-repeat="tag in library.tags">{{tag.tagName}}{{ $last ? '' : ', '}}</span></td>
                 <td>{{library.url}}</td>
                 <td class="actions">
                     <button type="button" class="btn btn-save">

@@ -160,7 +160,7 @@
 <h1>Article Topic Tagger (ATT)</h1>
 <p>Find all Article Topics</p>
 <p>Click on action button to view and edit</p>
-<p>Do you like to add new record? <a href="home.jag" class="btn btn-save">
+<p>Do you like to add new record? <a href="#/library-creation" class="btn btn-save">
     <svg viewBox="0 0 32 32" class="icon">
         <use xlink:href="#icon-save"></use>
     </svg>
@@ -221,7 +221,7 @@
                 <td>{{library.content.presenter}}{{library.webinar.presenter}}</td>
                 <td>{{library.content.level}}</td>
                 <td>{{library.content.reads}}</td>
-                <td><span ng-repeat="tag in library.tags">{{tag.tagName}}{{$last ? '' : ', '}}</span></td>
+                <td><span ng-repeat="tag in library.tags">{{tag.tagName}}{{ $last ? '' : ', '}}</span></td>
                 <td>{{library.url}}</td>
                 <td class="actions">
                     <button type="button" class="btn btn-save">

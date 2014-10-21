@@ -211,5 +211,6 @@ app.controller('LibraryController', ['$http',
     var library = this;
         $http.get('https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library').success(function(data){
         library.libraries = data;
+        console.log(data);
         });
     }]);
