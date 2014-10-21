@@ -1,3 +1,5 @@
+(function(){
+
 'use strict';
 
 /* Controllers */
@@ -214,3 +216,7 @@ app.controller('LibraryController', ['$http',
         console.log(data);
         });
     }]);
+
+
+
+})();
