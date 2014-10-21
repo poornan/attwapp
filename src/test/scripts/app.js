@@ -1,15 +1,16 @@
 'use strict';
 
-angular.module('ngdemoApp', [
-  'ngdemoApp.services',
-  'ngdemoApp.controllers'
+angular.module('ATTApp', [
+  'ATTApp.services',
+  'ATTApp.controllers'
   ])
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider.when('/dummy', {templateUrl: 'views/dummy.html', controller: 'DummyCtrl'});
   $routeProvider.when('/user-list', {templateUrl: 'views/user-list.html', controller: 'UserListCtrl'});
   $routeProvider.when('/user-detail/:id', {templateUrl: 'views/user-detail.html', controller: 'UserDetailCtrl'});
   $routeProvider.when('/user-creation', {templateUrl: 'views/user-creation.html', controller: 'UserCreationCtrl'});
-  $routeProvider.when('/library-creation', {templateUrl: 'views/library-creation.html', controller: 'LibraryCreationCtrl'});
+  $routeProvider.when('/library-creation', {templateUrl: 'views/library-creation.html', controller: 'AddController', controllerAs: 'addCtrl'});
+  $routeProvider.when('/library', {templateUrl: 'views/library-list.html', controller: 'LibraryController', controllerAs: 'libraryCtrl'});
   $routeProvider.otherwise({redirectTo: '/dummy'});
 
   /* CORS... */

@@ -1,6 +1,6 @@
 'use strict';
 
-var services = angular.module('ngdemoApp.services', ['ngResource']);
+var services = angular.module('ATTApp.services', ['ngResource']);
 
 var baseUrl = 'http://localhost\\:8080';
 

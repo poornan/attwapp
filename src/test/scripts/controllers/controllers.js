@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-var app = angular.module('ngdemoApp.controllers', []);
+var app = angular.module('ATTApp.controllers', []);
 
 
 // Clear browser cache (in development mode)
@@ -79,4 +79,137 @@ app.controller('UserCreationCtrl', ['$scope', 'UsersFactory', '$location',
         UsersFactory.create($scope.user);
         $location.path('/user-list');
       }
+    }]);
+
+app.controller('AddController', ['$http', 'transformRequestAsFormPost',
+    function($http, transformRequestAsFormPost){
+  this.formData = {};
+  this.processForm = function() {
+                  console.log(this.formData);
+                  $http({
+                          method  : 'POST',
+                          url     : 'https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library',
+                          data    : this.formData,  // pass in data as strings
+                          transformRequest: transformRequestAsFormPost,
+                          headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+                      })
+                          .success(function(data) {
+                              console.log(data);
+                              console.log(data.message);
+                               this.formData = {};
+                               x= data;
+                              /*if (!data.success) {
+                              	// if not successful, bind errors to error variables
+                                  //$scope.errorName = data.errors.name;
+//                                  $scope.errorSuperhero = data.errors.superheroAlias;
+                              } else {
+                              	// if successful, bind success message to message
+//                                  $scope.message = data.message;
+                              }*/
+                              var test;
+                              function checkTags(){
+                              for (var i = 0; i < data.response.tags.length; i++) {
+
+                                  if (data.response.tags[i].result=="SUCCESSFUL") {
+                                  test = true;
+                                  } else {
+                                  test = false;
+                                  }
+                              }
+
+                              }
+                              if (data.status===200 &&
+                                  data.response.Content=="SUCCESSFUL" &&
+                                  data.response.Library=="SUCCESSFUL"
+                                 ){
+                                    this.formData = {};
+                                    alert("successfully added");
+                                    console.log(this.formData);
+                                  }
+                          });
+  			};
+
+}]);
+
+app.factory("transformRequestAsFormPost",
+            function() {
+
+                // I prepare the request data for the form post.
+                function transformRequest( data, getHeaders ) {
+
+                    var headers = getHeaders();
+
+                    //headers[ "Content-type" ] = "application/x-www-form-urlencoded; charset=utf-8";
+
+                    return( serializeData( data ) );
+
+                }
+
+
+                // Return the factory value.
+                return( transformRequest );
+
+
+                // ---
+                // PRVIATE METHODS.
+                // ---
+
+
+                // I serialize the given Object into a key-value pair string. This
+                // method expects an object and will default to the toString() method.
+                // --
+                // NOTE: This is an atered version of the jQuery.param() method which
+                // will serialize a data collection for Form posting.
+                // --
+                // https://github.com/jquery/jquery/blob/master/src/serialize.js#L45
+                function serializeData( data ) {
+
+                    // If this is not an object, defer to native stringification.
+                    if ( ! angular.isObject( data ) ) {
+
+                        return( ( data == null ) ? "" : data.toString() );
+
+                    }
+
+                    var buffer = [];
+
+                    // Serialize each key in the object.
+                    for ( var name in data ) {
+
+                        if ( ! data.hasOwnProperty( name ) ) {
+
+                            continue;
+
+                        }
+
+                        var value = data[ name ];
+
+                        buffer.push(
+                            encodeURIComponent( name ) +
+                            "=" +
+                            encodeURIComponent( ( value == null ) ? "" : value )
+                        );
+                        //buffer.push(name+"=" +( value == null ) ? "" : value );
+
+                    }
+
+                    // Serialize the buffer and clean it up for transportation.
+                    var source = buffer
+                        .join( "&" )
+                        .replace( /%20/g, "+" )
+                    ;
+
+                    return( source );
+
+                }
+
+            });
+app.controller('LibraryController', ['$http',
+    function($http){
+    this.libraries;// = librariesData;
+
+    var library = this;
+        $http.get('https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library').success(function(data){
+        library.libraries = data;
+        });
     }]);
