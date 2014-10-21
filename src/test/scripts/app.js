@@ -9,6 +9,7 @@ angular.module('ngdemoApp', [
   $routeProvider.when('/user-list', {templateUrl: 'views/user-list.html', controller: 'UserListCtrl'});
   $routeProvider.when('/user-detail/:id', {templateUrl: 'views/user-detail.html', controller: 'UserDetailCtrl'});
   $routeProvider.when('/user-creation', {templateUrl: 'views/user-creation.html', controller: 'UserCreationCtrl'});
+  $routeProvider.when('/library-creation', {templateUrl: 'views/user-creation.html', controller: 'LibraryCreationCtrl'});
   $routeProvider.otherwise({redirectTo: '/dummy'});
 
   /* CORS... */

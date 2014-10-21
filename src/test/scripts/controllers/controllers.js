@@ -70,3 +70,13 @@ app.controller('UserCreationCtrl', ['$scope', 'UsersFactory', '$location',
       $location.path('/user-list');
     }
   }]);
+
+  app.controller('LibraryCreationCtrl', ['$scope', 'UsersFactory', '$location',
+    function ($scope, UsersFactory, $location) {
+
+      /* callback for ng-click 'createNewUser': */
+      $scope.createNewUser = function () {
+        UsersFactory.create($scope.user);
+        $location.path('/user-list');
+      }
+    }]);
