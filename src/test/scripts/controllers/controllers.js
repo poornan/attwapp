@@ -208,12 +208,12 @@ app.factory("transformRequestAsFormPost",
                 }
 
             });
-app.controller('LibraryController', ['$http', '$scope', '$location',
-    function($http, $scope, $location){
+app.controller('LibraryController', ['$http', '$rootScope', '$location',
+    function($http, $rootScope, $location){
     this.libraries;// = librariesData;
     this.editLibrary = function (library){
-       $scope.library = library;
-       console.log($scope.library);
+       $rootScope.library = library;
+       console.log($rootScope.library);
        $location.path('/library-edit');
     };
     var library = this;
@@ -223,13 +223,13 @@ app.controller('LibraryController', ['$http', '$scope', '$location',
         });
     }]);
 
-app.controller('UpdateController', ['$http', '$scope', 'transformRequestAsFormPost',
+app.controller('UpdateController', ['$http', '$rootScope', 'transformRequestAsFormPost',
     function($http, $scope, transformRequestAsFormPost){
 
   this.formData = {};
-  this.formData = $scope.library;
+  this.formData = $rootScope.library;
   console.log(this.formData);
-  console.log($scope.library);
+  console.log($rootScope.library);
   this.processForm = function() {
                   console.log(this.formData);
                   $http({
