@@ -212,7 +212,7 @@ app.controller('LibraryController', ['$http', '$scope', '$location',
     function($http, $scope, $location){
     this.libraries;// = librariesData;
     this.editLibrary = function (library){
-       $.scope.library = library;
+       $scope.library = library;
        $location.path('/library-edit');
     };
     var library = this;
