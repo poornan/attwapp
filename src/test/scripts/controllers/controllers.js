@@ -208,10 +208,13 @@ app.factory("transformRequestAsFormPost",
                 }
 
             });
-app.controller('LibraryController', ['$http',
-    function($http){
+app.controller('LibraryController', ['$http', '$scope'
+    function($http, $scope){
     this.libraries;// = librariesData;
-
+    this.editLibrary = function (library){
+       $.scope.library = library;
+       $location.path('/library-edit');
+    };
     var library = this;
         $http.get('https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library').success(function(data){
         library.libraries = data;
@@ -222,7 +225,7 @@ app.controller('LibraryController', ['$http',
 app.controller('UpdateController', ['$http', '$scope', 'transformRequestAsFormPost',
     function($http, $scope, transformRequestAsFormPost){
 
-  this.formData = $scope.user;
+  this.formData = $scope.library;
   this.processForm = function() {
                   console.log(this.formData);
                   $http({
