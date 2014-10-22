@@ -225,7 +225,8 @@ app.controller('LibraryController', ['$http', '$scope', '$location',
 app.controller('UpdateController', ['$http', '$scope', 'transformRequestAsFormPost',
     function($http, $scope, transformRequestAsFormPost){
 
-  this.formData = $scope.library;
+  this.formData = {};
+  formData = $scope.library;
   console.log(formData);
   this.processForm = function() {
                   console.log(this.formData);
