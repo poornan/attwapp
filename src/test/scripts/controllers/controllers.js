@@ -244,7 +244,7 @@ app.controller('UpdateController', ['$http', '$rootScope', '$location', 'transfo
                     data['title'] = this.formData.title;
                     data['published_date'] = this.formData.publishedDate;
                     data['url'] = this.formData.url;
-                    data['presenter'] = this.formData.content.presenter;
+                    data['presenter'] = this.formData.content.presenter || this.formData.webinar.presenter;
                     data['level'] = this.formData.content.level;
                     data['reads'] = this.formData.content.reads;
                     data['tag_id'] = this.formData.tag_id;
