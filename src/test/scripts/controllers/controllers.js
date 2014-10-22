@@ -98,7 +98,7 @@ app.controller('AddController', ['$http', 'transformRequestAsFormPost',
                           .success(function(data) {
                               console.log(data);
                               console.log(data.message);
-                               this.formData = {};
+                               //this.formData = {};
                                x= data;
                               /*if (!data.success) {
                               	// if not successful, bind errors to error variables
@@ -124,7 +124,7 @@ app.controller('AddController', ['$http', 'transformRequestAsFormPost',
                                   data.response.Content=="SUCCESSFUL" &&
                                   data.response.Library=="SUCCESSFUL"
                                  ){
-                                    this.formData = {};
+                                    //this.formData = {};
                                     alert("successfully added");
                                     console.log(this.formData);
                                   }
