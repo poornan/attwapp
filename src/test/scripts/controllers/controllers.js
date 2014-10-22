@@ -227,15 +227,26 @@ app.controller('UpdateController', ['$http', '$rootScope', 'transformRequestAsFo
     function($http, $rootScope, transformRequestAsFormPost){
 
   this.formData = {};
+
+
   this.formData = $rootScope.library;
-  console.log(this.formData);
-  console.log($rootScope.library);
+
   this.processForm = function() {
                   console.log(this.formData);
+                  var data = {};
+                    data['category_id'] = this.formData.category.categoryID;
+                    data['content_id'] = this.formData.contentID;
+                    data['title'] = this.formData.title;
+                    data['published_date'] = this.formData.publishedDate;
+                    data['url'] = this.formData.url;
+                    data['presenter'] = this.formData.content.presenter;
+                    data['level'] = this.formData.content.level;
+                    data['reads'] = this.formData.content.reads;
+                    data['tag_id'] = this.formData.tag_id;
                   $http({
-                          method  : 'POST',
+                          method  : 'PUT',
                           url     : 'https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library',
-                          data    : this.formData,  // pass in data as strings
+                          data    : data,  // pass in data as strings
                           transformRequest: transformRequestAsFormPost,
                           headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
                       })
@@ -264,12 +275,9 @@ app.controller('UpdateController', ['$http', '$rootScope', 'transformRequestAsFo
                               }
 
                               }
-                              if (data.status===200 &&
-                                  data.response.Content=="SUCCESSFUL" &&
-                                  data.response.Library=="SUCCESSFUL"
-                                 ){
+                              if (data.status===200){
                                     //this.formData = {};
-                                    alert("successfully added");
+                                    alert("successfully updated");
 //                                    console.log(this.formData);
                                   } else {
                                      alert("Something went wrong please try again later");
