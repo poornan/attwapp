@@ -126,7 +126,7 @@ app.controller('AddController', ['$http', 'transformRequestAsFormPost',
                                  ){
                                     //this.formData = {};
                                     alert("successfully added");
-                                    console.log(this.formData);
+//                                    console.log(this.formData);
                                   }
                           });
   			};
