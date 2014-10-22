@@ -83,9 +83,12 @@ app.controller('UserCreationCtrl', ['$scope', 'UsersFactory', '$location',
       }
     }]);
 
-app.controller('AddController', ['$http', 'transformRequestAsFormPost',
-    function($http, transformRequestAsFormPost){
+app.controller('AddController', ['$http', '$location', 'transformRequestAsFormPost',
+    function($http, $location, transformRequestAsFormPost){
   this.formData = {};
+  this.cancel = function(){
+     $location.path('/library');
+    };
   this.processForm = function() {
                   console.log(this.formData);
                   $http({
@@ -126,7 +129,9 @@ app.controller('AddController', ['$http', 'transformRequestAsFormPost',
                                  ){
                                     //this.formData = {};
                                     alert("successfully added");
-//                                    console.log(this.formData);
+
+                                          $location.path('/library');
+
                                   } else {
                                      alert("Something went wrong please try again later");
                                   }
