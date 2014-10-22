@@ -99,7 +99,7 @@ app.controller('AddController', ['$http', 'transformRequestAsFormPost',
                               console.log(data);
                               console.log(data.message);
                                //this.formData = {};
-                               x= data;
+                               //x= data;
                               /*if (!data.success) {
                               	// if not successful, bind errors to error variables
                                   //$scope.errorName = data.errors.name;
