@@ -208,7 +208,7 @@ app.factory("transformRequestAsFormPost",
                 }
 
             });
-app.controller('LibraryController', ['$http', '$scope', '$location'
+app.controller('LibraryController', ['$http', '$scope', '$location',
     function($http, $scope, $location){
     this.libraries;// = librariesData;
     this.editLibrary = function (library){
