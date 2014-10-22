@@ -223,8 +223,8 @@ app.controller('LibraryController', ['$http', '$rootScope', '$location',
         });
     }]);
 
-app.controller('UpdateController', ['$http', '$rootScope', 'transformRequestAsFormPost',
-    function($http, $rootScope, transformRequestAsFormPost){
+app.controller('UpdateController', ['$http', '$rootScope', '$location', 'transformRequestAsFormPost',
+    function($http, $rootScope, $location, transformRequestAsFormPost){
 
   this.formData = {};
 
@@ -278,12 +278,51 @@ app.controller('UpdateController', ['$http', '$rootScope', 'transformRequestAsFo
                               if (data.status===200){
                                     //this.formData = {};
                                     alert("successfully updated");
-//                                    console.log(this.formData);
+                                    $location.path('/library');
                                   } else {
                                      alert("Something went wrong please try again later");
                                   }
                           });
   			};
+  this.cancel = function(){
+   $location.path('/library');
+  };
+  this.deleteLibrary = function() {
+  var data = {};
+  data['content_id'] = this.formData.contentID;
+    $http({
+                              method  : 'DELETE',
+                              url     : 'https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library',
+                              data    : data,  // pass in data as strings
+                              transformRequest: transformRequestAsFormPost,
+                              headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+                          })
+                              .success(function(data) {
+                                  console.log(data);
+                                  console.log(data.message);
+
+                                  var test;
+                                  function checkTags(){
+                                  for (var i = 0; i < data.response.tags.length; i++) {
+
+                                      if (data.response.tags[i].result=="SUCCESSFUL") {
+                                      test = true;
+                                      } else {
+                                      test = false;
+                                      }
+                                  }
+
+                                  }
+                                  if (data.status===200){
+                                        alert("successfully deleted");
+                                        $location.path('/library');
+                                      } else {
+                                         alert("Something went wrong please try again later");
+                                      }
+                              });
+
+
+  };
 
 }]);
 
