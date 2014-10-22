@@ -226,6 +226,7 @@ app.controller('UpdateController', ['$http', '$scope', 'transformRequestAsFormPo
     function($http, $scope, transformRequestAsFormPost){
 
   this.formData = $scope.library;
+  console.log(formData);
   this.processForm = function() {
                   console.log(this.formData);
                   $http({
