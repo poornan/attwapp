@@ -12,6 +12,7 @@ angular.module('ATTApp', [
   $routeProvider.when('/user-creation', {templateUrl: 'views/user-creation.html', controller: 'UserCreationCtrl'});
   $routeProvider.when('/library-creation', {templateUrl: 'views/library-creation.html', controller: 'AddController', controllerAs: 'addCtrl'});
   $routeProvider.when('/library', {templateUrl: 'views/library-list.html', controller: 'LibraryController', controllerAs: 'libraryCtrl'});
+  $routeProvider.when('/library-edit', {templateUrl: 'views/library-edit.html', controller: 'UpdateController', controllerAs: 'updateCtrl'});
   $routeProvider.otherwise({redirectTo: '/dummy'});
 
   /* CORS... */

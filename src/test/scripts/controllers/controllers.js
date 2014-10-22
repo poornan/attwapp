@@ -127,6 +127,8 @@ app.controller('AddController', ['$http', 'transformRequestAsFormPost',
                                     //this.formData = {};
                                     alert("successfully added");
 //                                    console.log(this.formData);
+                                  } else {
+                                     alert("Something went wrong please try again later");
                                   }
                           });
   			};
@@ -217,6 +219,58 @@ app.controller('LibraryController', ['$http',
         });
     }]);
 
+app.controller('UpdateController', ['$http', '$scope', 'transformRequestAsFormPost',
+    function($http, $scope, transformRequestAsFormPost){
+
+  this.formData = $scope.user;
+  this.processForm = function() {
+                  console.log(this.formData);
+                  $http({
+                          method  : 'POST',
+                          url     : 'https://appserver.dev.cloud.wso2.com/t/ananthanesh4519/webapps/attws-default-SNAPSHOT/services/library/libraryService/library',
+                          data    : this.formData,  // pass in data as strings
+                          transformRequest: transformRequestAsFormPost,
+                          headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+                      })
+                          .success(function(data) {
+                              console.log(data);
+                              console.log(data.message);
+                               //this.formData = {};
+                               //x= data;
+                              /*if (!data.success) {
+                              	// if not successful, bind errors to error variables
+                                  //$scope.errorName = data.errors.name;
+//                                  $scope.errorSuperhero = data.errors.superheroAlias;
+                              } else {
+                              	// if successful, bind success message to message
+//                                  $scope.message = data.message;
+                              }*/
+                              var test;
+                              function checkTags(){
+                              for (var i = 0; i < data.response.tags.length; i++) {
+
+                                  if (data.response.tags[i].result=="SUCCESSFUL") {
+                                  test = true;
+                                  } else {
+                                  test = false;
+                                  }
+                              }
+
+                              }
+                              if (data.status===200 &&
+                                  data.response.Content=="SUCCESSFUL" &&
+                                  data.response.Library=="SUCCESSFUL"
+                                 ){
+                                    //this.formData = {};
+                                    alert("successfully added");
+//                                    console.log(this.formData);
+                                  } else {
+                                     alert("Something went wrong please try again later");
+                                  }
+                          });
+  			};
+
+}]);
 
 
 })();
