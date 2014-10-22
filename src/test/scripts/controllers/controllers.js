@@ -224,7 +224,7 @@ app.controller('LibraryController', ['$http', '$rootScope', '$location',
     }]);
 
 app.controller('UpdateController', ['$http', '$rootScope', 'transformRequestAsFormPost',
-    function($http, $scope, transformRequestAsFormPost){
+    function($http, $rootScope, transformRequestAsFormPost){
 
   this.formData = {};
   this.formData = $rootScope.library;
