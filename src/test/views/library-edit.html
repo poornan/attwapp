@@ -4,10 +4,10 @@
             <h2>Article Topic Tagger  <small> Update library content.</small></h2>
             <hr class="colorgraph">
             <div class="form-group">
-                <input type="text" ng-model="library.title" name="title" id="title" class="form-control input-sl" placeholder="Title" tabindex="3">
+                <input type="text" ng-model="updateCtrl.formData.title" name="title" id="title" class="form-control input-sl" placeholder="Title" tabindex="3">
             </div>
             <div class="form-group">
-                <select class="form-control input-sl" ng-model="updateCtrl.formData.category_id" name="category_id" id="category_id">
+                <select class="form-control input-sl" ng-model="updateCtrl.formData.category.categoryID" name="category_id" id="category_id">
                     <option value="1">Article</option>
                     <option value="2">Presentation</option>
                     <option value="3">Video</option>
@@ -15,16 +15,16 @@
                 </select>
             </div>
             <div class="form-group">
-                <input type="text" ng-model="updateCtrl.formData.presenter" name="presenter" id="presenter" class="form-control input-sl" placeholder="Presenter" tabindex="3">
+                <input type="text" ng-model="updateCtrl.formData.content.presenter" name="presenter" id="presenter" class="form-control input-sl" placeholder="Presenter" tabindex="3">
             </div>
             <div class="form-group">
-                <input type="text" ng-model="updateCtrl.formData.published_date" name="published_date" id="published_date" class="form-control input-sl" placeholder="Published Date" tabindex="3">
+                <input type="text" ng-model="updateCtrl.formData.publishedDate" name="publishedDate" id="publishedDate" class="form-control input-sl" placeholder="Published Date" tabindex="3">
             </div>
             <div class="form-group">
-                <input type="text" ng-model="updateCtrl.formData.level" name="level" id="level" class="form-control input-sl" placeholder="Level" tabindex="3">
+                <input type="text" ng-model="updateCtrl.formData.content.level" name="level" id="level" class="form-control input-sl" placeholder="Level" tabindex="3">
             </div>
             <div class="form-group">
-                <input type="text" ng-model="updateCtrl.formData.reads" name="reads" id="reads" class="form-control input-sl" placeholder="Reads" tabindex="3">
+                <input type="text" ng-model="updateCtrl.formData.content.reads" name="reads" id="reads" class="form-control input-sl" placeholder="Reads" tabindex="3">
             </div>
             <div class="form-group">
                 <input type="text" ng-model="updateCtrl.formData.url" name="url" id="url" class="form-control input-sl" placeholder="URL" tabindex="3">
